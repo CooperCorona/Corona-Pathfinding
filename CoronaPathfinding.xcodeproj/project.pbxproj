@@ -7,13 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC61834C1C0E8C5000327685 /* CoronaPathfinding.h in Headers */ = {isa = PBXBuildFile; fileRef = DC61834B1C0E8C5000327685 /* CoronaPathfinding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC6183551C0E8C6D00327685 /* APathfinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6183531C0E8C6D00327685 /* APathfinder.swift */; };
+		DC6183661C0E8D7900327685 /* OmniSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC61835F1C0E8D6F00327685 /* OmniSwift.framework */; };
+		DC6183681C0E8DC800327685 /* PathfindingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6183671C0E8DC800327685 /* PathfindingNode.swift */; };
+		DC61836A1C0E936500327685 /* PathfindingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6183691C0E936500327685 /* PathfindingDelegate.swift */; };
+		DCD34FD01C13E23D00D28816 /* CellularAutomaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD34FCD1C13E23D00D28816 /* CellularAutomaton.swift */; };
+		DCD34FD11C13E23D00D28816 /* CellularAutomatonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD34FCE1C13E23D00D28816 /* CellularAutomatonDelegate.swift */; };
+		DCD34FE21C13EDD500D28816 /* GLSBoolList2DSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD34FE11C13EDD500D28816 /* GLSBoolList2DSprite.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC61835E1C0E8D6F00327685 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC6183571C0E8D6F00327685 /* OmniSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC72AA3B1B166C7D0035BF49;
+			remoteInfo = OmniSwift;
+		};
+		DC6183601C0E8D6F00327685 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC6183571C0E8D6F00327685 /* OmniSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC72AA461B166C7D0035BF49;
+			remoteInfo = OmniSwiftTests;
+		};
+		DC6183621C0E8D6F00327685 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC6183571C0E8D6F00327685 /* OmniSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC37E8B61BB740D700313B10;
+			remoteInfo = OmniSwiftShapes;
+		};
+		DC6183641C0E8D6F00327685 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC6183571C0E8D6F00327685 /* OmniSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC37E8BF1BB740D700313B10;
+			remoteInfo = OmniSwiftShapesTests;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		DC6183481C0E8C5000327685 /* CoronaPathfinding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoronaPathfinding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC61834B1C0E8C5000327685 /* CoronaPathfinding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoronaPathfinding.h; sourceTree = "<group>"; };
 		DC61834D1C0E8C5000327685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC6183531C0E8C6D00327685 /* APathfinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APathfinder.swift; sourceTree = "<group>"; };
+		DC6183571C0E8D6F00327685 /* OmniSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OmniSwift.xcodeproj; path = ../OmniSwift/OmniSwift.xcodeproj; sourceTree = "<group>"; };
+		DC6183671C0E8DC800327685 /* PathfindingNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathfindingNode.swift; sourceTree = "<group>"; };
+		DC6183691C0E936500327685 /* PathfindingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathfindingDelegate.swift; sourceTree = "<group>"; };
+		DCD34FCD1C13E23D00D28816 /* CellularAutomaton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellularAutomaton.swift; sourceTree = "<group>"; };
+		DCD34FCE1C13E23D00D28816 /* CellularAutomatonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellularAutomatonDelegate.swift; sourceTree = "<group>"; };
+		DCD34FE11C13EDD500D28816 /* GLSBoolList2DSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLSBoolList2DSprite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC6183661C0E8D7900327685 /* OmniSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -30,6 +74,7 @@
 		DC61833E1C0E8C5000327685 = {
 			isa = PBXGroup;
 			children = (
+				DC6183571C0E8D6F00327685 /* OmniSwift.xcodeproj */,
 				DC61834A1C0E8C5000327685 /* CoronaPathfinding */,
 				DC6183491C0E8C5000327685 /* Products */,
 			);
@@ -46,10 +91,26 @@
 		DC61834A1C0E8C5000327685 /* CoronaPathfinding */ = {
 			isa = PBXGroup;
 			children = (
-				DC61834B1C0E8C5000327685 /* CoronaPathfinding.h */,
+				DC6183531C0E8C6D00327685 /* APathfinder.swift */,
+				DCD34FCD1C13E23D00D28816 /* CellularAutomaton.swift */,
+				DCD34FCE1C13E23D00D28816 /* CellularAutomatonDelegate.swift */,
+				DCD34FE11C13EDD500D28816 /* GLSBoolList2DSprite.swift */,
+				DC6183691C0E936500327685 /* PathfindingDelegate.swift */,
+				DC6183671C0E8DC800327685 /* PathfindingNode.swift */,
 				DC61834D1C0E8C5000327685 /* Info.plist */,
 			);
 			path = CoronaPathfinding;
+			sourceTree = "<group>";
+		};
+		DC6183581C0E8D6F00327685 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC61835F1C0E8D6F00327685 /* OmniSwift.framework */,
+				DC6183611C0E8D6F00327685 /* OmniSwiftTests.xctest */,
+				DC6183631C0E8D6F00327685 /* OmniSwiftShapes.framework */,
+				DC6183651C0E8D6F00327685 /* OmniSwiftShapesTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,7 +120,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC61834C1C0E8C5000327685 /* CoronaPathfinding.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,12 +168,49 @@
 			mainGroup = DC61833E1C0E8C5000327685;
 			productRefGroup = DC6183491C0E8C5000327685 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DC6183581C0E8D6F00327685 /* Products */;
+					ProjectRef = DC6183571C0E8D6F00327685 /* OmniSwift.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				DC6183471C0E8C5000327685 /* CoronaPathfinding */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		DC61835F1C0E8D6F00327685 /* OmniSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OmniSwift.framework;
+			remoteRef = DC61835E1C0E8D6F00327685 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DC6183611C0E8D6F00327685 /* OmniSwiftTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OmniSwiftTests.xctest;
+			remoteRef = DC6183601C0E8D6F00327685 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DC6183631C0E8D6F00327685 /* OmniSwiftShapes.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OmniSwiftShapes.framework;
+			remoteRef = DC6183621C0E8D6F00327685 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DC6183651C0E8D6F00327685 /* OmniSwiftShapesTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OmniSwiftShapesTests.xctest;
+			remoteRef = DC6183641C0E8D6F00327685 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DC6183461C0E8C5000327685 /* Resources */ = {
@@ -130,6 +227,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD34FD01C13E23D00D28816 /* CellularAutomaton.swift in Sources */,
+				DC6183681C0E8DC800327685 /* PathfindingNode.swift in Sources */,
+				DCD34FE21C13EDD500D28816 /* GLSBoolList2DSprite.swift in Sources */,
+				DCD34FD11C13E23D00D28816 /* CellularAutomatonDelegate.swift in Sources */,
+				DC6183551C0E8C6D00327685 /* APathfinder.swift in Sources */,
+				DC61836A1C0E936500327685 /* PathfindingDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +331,7 @@
 		DC6183511C0E8C5000327685 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -238,12 +342,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Corona-Corporation.CoronaPathfinding";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		DC6183521C0E8C5000327685 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -276,6 +382,7 @@
 				DC6183521C0E8C5000327685 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
