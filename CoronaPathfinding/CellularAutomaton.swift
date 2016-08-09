@@ -122,6 +122,10 @@ public class CellularAutomaton: NSObject {
         self.init(width: width, height: height, seed: seed, delegate: NeumannCellularAutomatonDelegate())
     }
     
+    public convenience init(width:Int, height:Int) {
+        self.init(width: width, height: height, seed: arc4random(), delegate: NeumannCellularAutomatonDelegate())
+    }
+    
     public convenience init?(file:String) {
         self.init(file: file, delegate: NeumannCellularAutomatonDelegate())
     }
@@ -431,6 +435,9 @@ extension CellularAutomaton: PathfindingDelegate {
 
     public func statesAdjacentTo(state: IntPoint) -> [(IntPoint, Int)] {
         /*
+         *  I don't remember why this is commented out,
+         *  it was probably too slow.
+         *
         var states:[(IntPoint, Int)] = []
         for j in -1...1 {
             for i in -1...1 {
@@ -458,16 +465,16 @@ extension CellularAutomaton: PathfindingDelegate {
         if self[state.x, state.y - 1] {
             states.append((IntPoint(x: state.x, y: state.y - 1), 10))
         }
-        if self[state.x + 1, state.y + 1] {
+        if self[state.x + 1, state.y + 1] && self[state.x + 1, state.y] && self[state.x, state.y + 1] {
             states.append((IntPoint(x: state.x + 1, y: state.y + 1), 14))
         }
-        if self[state.x - 1, state.y + 1] {
+        if self[state.x - 1, state.y + 1] && self[state.x - 1, state.y] && self[state.x, state.y + 1] {
             states.append((IntPoint(x: state.x - 1, y: state.y + 1), 14))
         }
-        if self[state.x + 1, state.y - 1] {
+        if self[state.x + 1, state.y - 1] && self[state.x + 1, state.y] && self[state.x, state.y - 1] {
             states.append((IntPoint(x: state.x + 1, y: state.y - 1), 14))
         }
-        if self[state.x - 1, state.y - 1] {
+        if self[state.x - 1, state.y - 1] && self[state.x - 1, state.y] && self[state.x, state.y - 1] {
             states.append((IntPoint(x: state.x - 1, y: state.y - 1), 14))
         }
         

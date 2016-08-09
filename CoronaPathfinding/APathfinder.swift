@@ -13,7 +13,6 @@ enum APathfinderError: ErrorType {
     case ImpossiblePath
 }
 
-//public class APathfinder<T: PathfindingProtocol, PathfindingDelegateType: PathfindingDelegate where PathfindingDelegateType.StateType == T> {
 public class APathfinder<PathfindingDelegateType: PathfindingDelegate> {
 
     typealias T = PathfindingDelegateType.StateType
@@ -38,7 +37,7 @@ public class APathfinder<PathfindingDelegateType: PathfindingDelegate> {
     public func findOptimalPath() throws -> [T] {
         self.openList.append(PathfindingNode(state: self.initialState, hValue: delegate.distanceFrom(self.initialState, to: self.finalState)))
         while try !self.walkState() {
-//            print("State: \(self.getLowestState())")
+
         }
         return self.currentState.getPath()
     }
@@ -52,7 +51,6 @@ public class APathfinder<PathfindingDelegateType: PathfindingDelegate> {
     
     public func walkState() throws -> Bool {
         guard let state = self.getLowestState() else {
-//            return false
             throw APathfinderError.ImpossiblePath
         }
         
@@ -63,11 +61,16 @@ public class APathfinder<PathfindingDelegateType: PathfindingDelegate> {
             return true
         }
         
-//        for adjacent in state.adjacentStates().filter({ self.delegate.stateIsValid($0.state) }) {
         let adjacents = self.delegate.statesAdjacentTo(state.state)
         let adjacentStates = adjacents.map() { (PathfindingNode(state: $0.0, hValue: self.delegate.distanceFrom($0.0, to: self.finalState)), $0.1) }
+
+        self.iterateAdjacentStates(adjacentStates, state: state)
+
+        return false
+    }
+    
+    public func iterateAdjacentStates(adjacentStates:[(PathfindingNode<T>, Int)], state:PathfindingNode<T>) {
         for (adjacent, moveCost) in adjacentStates {
-//            let moveCost = self.delegate.costToMoveFrom(state.state, to: adjacent.state)
             if let existingIndex = self.closedList.indexOf(adjacent) {
                 let node = self.closedList[existingIndex]
                 if state.movementCost + moveCost < node.movementCost {
@@ -85,8 +88,6 @@ public class APathfinder<PathfindingDelegateType: PathfindingDelegate> {
                 }
             }
         }
-
-        return false
     }
     
     public func getLowestState() -> PathfindingNode<T>? {

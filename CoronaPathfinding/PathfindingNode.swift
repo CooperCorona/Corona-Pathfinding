@@ -9,7 +9,7 @@
 import UIKit
 import OmniSwift
 
-public final class PathfindingNode<T: Hashable/*: PathfindingProtocol*/>: /*NSObject, PathfindingProtocol,*/Hashable, CustomStringConvertible {
+public final class PathfindingNode<T: Hashable/*: PathfindingProtocol*/>: /*NSObject, PathfindingProtocol,*/Hashable, Comparable, CustomStringConvertible {
     
     public private(set) var parent:PathfindingNode<T>? = nil
     public private(set) var movementCost = 0
@@ -63,4 +63,20 @@ public final class PathfindingNode<T: Hashable/*: PathfindingProtocol*/>: /*NSOb
 
 public func ==<T: Hashable/*PathfindingProtocol*/>(lhs:PathfindingNode<T>, rhs:PathfindingNode<T>) -> Bool {
     return lhs.state == rhs.state
+}
+
+public func < <T: Hashable>(lhs:PathfindingNode<T>, rhs:PathfindingNode<T>) -> Bool {
+    return lhs.fValue < rhs.fValue
+}
+
+public func > <T: Hashable>(lhs:PathfindingNode<T>, rhs:PathfindingNode<T>) -> Bool {
+    return lhs.fValue > rhs.fValue
+}
+
+public func <= <T: Hashable>(lhs:PathfindingNode<T>, rhs:PathfindingNode<T>) -> Bool {
+    return lhs.fValue <= rhs.fValue
+}
+
+public func >= <T: Hashable>(lhs:PathfindingNode<T>, rhs:PathfindingNode<T>) -> Bool {
+    return lhs.fValue >= rhs.fValue
 }
