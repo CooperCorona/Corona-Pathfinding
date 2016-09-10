@@ -6,8 +6,13 @@
 //  Copyright © 2015 Cooper Knaak. All rights reserved.
 //
 
-import UIKit
-import OmniSwift
+#if os(iOS)
+    import UIKit
+#else
+    import Cocoa
+#endif
+import CoronaConvenience
+import CoronaStructures
 
 extension CellularAutomatonDelegate {
     public var validToInvalidInitialFactor:CGFloat { return 0.45 }

@@ -6,8 +6,12 @@
 //  Copyright © 2015 Cooper Knaak. All rights reserved.
 //
 
-import UIKit
-import OmniSwift
+#if os(iOS)
+    import UIKit
+#else
+    import Cocoa
+#endif
+import CoronaConvenience
 
 public final class PathfindingNode<T: Hashable/*: PathfindingProtocol*/>: /*NSObject, PathfindingProtocol,*/Hashable, Comparable, CustomStringConvertible {
     

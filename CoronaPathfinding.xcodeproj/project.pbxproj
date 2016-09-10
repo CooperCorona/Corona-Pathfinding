@@ -8,42 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		DC6183551C0E8C6D00327685 /* APathfinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6183531C0E8C6D00327685 /* APathfinder.swift */; };
-		DC6183661C0E8D7900327685 /* OmniSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC61835F1C0E8D6F00327685 /* OmniSwift.framework */; };
 		DC6183681C0E8DC800327685 /* PathfindingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6183671C0E8DC800327685 /* PathfindingNode.swift */; };
 		DC61836A1C0E936500327685 /* PathfindingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6183691C0E936500327685 /* PathfindingDelegate.swift */; };
+		DC806F311D8201DD006F95F7 /* CoronaConvenience.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC806F291D8201D5006F95F7 /* CoronaConvenience.framework */; };
+		DC806F321D8201DD006F95F7 /* CoronaStructures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC806F301D8201D7006F95F7 /* CoronaStructures.framework */; };
 		DCD34FD01C13E23D00D28816 /* CellularAutomaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD34FCD1C13E23D00D28816 /* CellularAutomaton.swift */; };
 		DCD34FD11C13E23D00D28816 /* CellularAutomatonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD34FCE1C13E23D00D28816 /* CellularAutomatonDelegate.swift */; };
-		DCD34FE21C13EDD500D28816 /* GLSBoolList2DSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD34FE11C13EDD500D28816 /* GLSBoolList2DSprite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DC61835E1C0E8D6F00327685 /* PBXContainerItemProxy */ = {
+		DC806F281D8201D5006F95F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DC6183571C0E8D6F00327685 /* OmniSwift.xcodeproj */;
+			containerPortal = DC806F241D8201D5006F95F7 /* CoronaConvenience.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = DC72AA3B1B166C7D0035BF49;
-			remoteInfo = OmniSwift;
+			remoteGlobalIDString = DC4D07951D7D233A00862432;
+			remoteInfo = CoronaConvenience;
 		};
-		DC6183601C0E8D6F00327685 /* PBXContainerItemProxy */ = {
+		DC806F2F1D8201D7006F95F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DC6183571C0E8D6F00327685 /* OmniSwift.xcodeproj */;
+			containerPortal = DC806F2A1D8201D7006F95F7 /* CoronaStructures.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = DC72AA461B166C7D0035BF49;
-			remoteInfo = OmniSwiftTests;
-		};
-		DC6183621C0E8D6F00327685 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC6183571C0E8D6F00327685 /* OmniSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DC37E8B61BB740D700313B10;
-			remoteInfo = OmniSwiftShapes;
-		};
-		DC6183641C0E8D6F00327685 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC6183571C0E8D6F00327685 /* OmniSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DC37E8BF1BB740D700313B10;
-			remoteInfo = OmniSwiftShapesTests;
+			remoteGlobalIDString = DC7428CE1D7F4446001AF8E1;
+			remoteInfo = CoronaStructures;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -51,12 +37,12 @@
 		DC6183481C0E8C5000327685 /* CoronaPathfinding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoronaPathfinding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC61834D1C0E8C5000327685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC6183531C0E8C6D00327685 /* APathfinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APathfinder.swift; sourceTree = "<group>"; };
-		DC6183571C0E8D6F00327685 /* OmniSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OmniSwift.xcodeproj; path = ../OmniSwift/OmniSwift.xcodeproj; sourceTree = "<group>"; };
 		DC6183671C0E8DC800327685 /* PathfindingNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathfindingNode.swift; sourceTree = "<group>"; };
 		DC6183691C0E936500327685 /* PathfindingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathfindingDelegate.swift; sourceTree = "<group>"; };
+		DC806F241D8201D5006F95F7 /* CoronaConvenience.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoronaConvenience.xcodeproj; path = "../Refactored Dependencies/CoronaConvenience/CoronaConvenience.xcodeproj"; sourceTree = "<group>"; };
+		DC806F2A1D8201D7006F95F7 /* CoronaStructures.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoronaStructures.xcodeproj; path = "../Refactored Dependencies/CoronaStructures/CoronaStructures.xcodeproj"; sourceTree = "<group>"; };
 		DCD34FCD1C13E23D00D28816 /* CellularAutomaton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellularAutomaton.swift; sourceTree = "<group>"; };
 		DCD34FCE1C13E23D00D28816 /* CellularAutomatonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellularAutomatonDelegate.swift; sourceTree = "<group>"; };
-		DCD34FE11C13EDD500D28816 /* GLSBoolList2DSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLSBoolList2DSprite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC6183661C0E8D7900327685 /* OmniSwift.framework in Frameworks */,
+				DC806F311D8201DD006F95F7 /* CoronaConvenience.framework in Frameworks */,
+				DC806F321D8201DD006F95F7 /* CoronaStructures.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +61,8 @@
 		DC61833E1C0E8C5000327685 = {
 			isa = PBXGroup;
 			children = (
-				DC6183571C0E8D6F00327685 /* OmniSwift.xcodeproj */,
+				DC806F2A1D8201D7006F95F7 /* CoronaStructures.xcodeproj */,
+				DC806F241D8201D5006F95F7 /* CoronaConvenience.xcodeproj */,
 				DC61834A1C0E8C5000327685 /* CoronaPathfinding */,
 				DC6183491C0E8C5000327685 /* Products */,
 			);
@@ -94,7 +82,6 @@
 				DC6183531C0E8C6D00327685 /* APathfinder.swift */,
 				DCD34FCD1C13E23D00D28816 /* CellularAutomaton.swift */,
 				DCD34FCE1C13E23D00D28816 /* CellularAutomatonDelegate.swift */,
-				DCD34FE11C13EDD500D28816 /* GLSBoolList2DSprite.swift */,
 				DC6183691C0E936500327685 /* PathfindingDelegate.swift */,
 				DC6183671C0E8DC800327685 /* PathfindingNode.swift */,
 				DC61834D1C0E8C5000327685 /* Info.plist */,
@@ -102,13 +89,18 @@
 			path = CoronaPathfinding;
 			sourceTree = "<group>";
 		};
-		DC6183581C0E8D6F00327685 /* Products */ = {
+		DC806F251D8201D5006F95F7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DC61835F1C0E8D6F00327685 /* OmniSwift.framework */,
-				DC6183611C0E8D6F00327685 /* OmniSwiftTests.xctest */,
-				DC6183631C0E8D6F00327685 /* OmniSwiftShapes.framework */,
-				DC6183651C0E8D6F00327685 /* OmniSwiftShapesTests.xctest */,
+				DC806F291D8201D5006F95F7 /* CoronaConvenience.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC806F2B1D8201D7006F95F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC806F301D8201D7006F95F7 /* CoronaStructures.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,8 +162,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = DC6183581C0E8D6F00327685 /* Products */;
-					ProjectRef = DC6183571C0E8D6F00327685 /* OmniSwift.xcodeproj */;
+					ProductGroup = DC806F251D8201D5006F95F7 /* Products */;
+					ProjectRef = DC806F241D8201D5006F95F7 /* CoronaConvenience.xcodeproj */;
+				},
+				{
+					ProductGroup = DC806F2B1D8201D7006F95F7 /* Products */;
+					ProjectRef = DC806F2A1D8201D7006F95F7 /* CoronaStructures.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -182,32 +178,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		DC61835F1C0E8D6F00327685 /* OmniSwift.framework */ = {
+		DC806F291D8201D5006F95F7 /* CoronaConvenience.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = OmniSwift.framework;
-			remoteRef = DC61835E1C0E8D6F00327685 /* PBXContainerItemProxy */;
+			path = CoronaConvenience.framework;
+			remoteRef = DC806F281D8201D5006F95F7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DC6183611C0E8D6F00327685 /* OmniSwiftTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = OmniSwiftTests.xctest;
-			remoteRef = DC6183601C0E8D6F00327685 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DC6183631C0E8D6F00327685 /* OmniSwiftShapes.framework */ = {
+		DC806F301D8201D7006F95F7 /* CoronaStructures.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = OmniSwiftShapes.framework;
-			remoteRef = DC6183621C0E8D6F00327685 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DC6183651C0E8D6F00327685 /* OmniSwiftShapesTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = OmniSwiftShapesTests.xctest;
-			remoteRef = DC6183641C0E8D6F00327685 /* PBXContainerItemProxy */;
+			path = CoronaStructures.framework;
+			remoteRef = DC806F2F1D8201D7006F95F7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -229,7 +211,6 @@
 			files = (
 				DCD34FD01C13E23D00D28816 /* CellularAutomaton.swift in Sources */,
 				DC6183681C0E8DC800327685 /* PathfindingNode.swift in Sources */,
-				DCD34FE21C13EDD500D28816 /* GLSBoolList2DSprite.swift in Sources */,
 				DCD34FD11C13E23D00D28816 /* CellularAutomatonDelegate.swift in Sources */,
 				DC6183551C0E8C6D00327685 /* APathfinder.swift in Sources */,
 				DC61836A1C0E936500327685 /* PathfindingDelegate.swift in Sources */,
@@ -336,13 +317,16 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = CoronaPathfinding/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Corona-Corporation.CoronaPathfinding";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -354,12 +338,15 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = CoronaPathfinding/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Corona-Corporation.CoronaPathfinding";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};
 			name = Release;
 		};

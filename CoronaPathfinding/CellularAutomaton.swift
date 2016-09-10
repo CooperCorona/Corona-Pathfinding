@@ -6,9 +6,13 @@
 //  Copyright © 2015 Cooper Knaak. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
-import OmniSwift
-
+#else
+import Cocoa
+#endif
+import CoronaConvenience
+import CoronaStructures
 public protocol CellularAutomatonDelegate {
     
     func neighboringPointsForPoint(point:IntPoint) -> [IntPoint]

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import OmniSwift
+import CoronaConvenience
     
 enum APathfinderError: ErrorType {
     case ImpossiblePath
