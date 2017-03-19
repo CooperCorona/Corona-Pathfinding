@@ -22,7 +22,7 @@ public protocol PathfindingDelegate {
      (valid) adjacent state and the second element is the cost
      to move to that state.
      */
-    func statesAdjacentTo(state:StateType) -> [(StateType, Int)]
-    func distanceFrom(fromState:StateType, to toState:StateType) -> Int
+    func statesAdjacentTo(_ state:StateType) -> [(StateType, Int)]
+    func distanceFrom(_ fromState:StateType, to toState:StateType) -> Int
     
 }

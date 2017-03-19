@@ -9,22 +9,22 @@
 import Foundation
 import CoronaConvenience
     
-enum APathfinderError: ErrorType {
-    case ImpossiblePath
+enum APathfinderError: Error {
+    case impossiblePath
 }
 
-public class APathfinder<PathfindingDelegateType: PathfindingDelegate> {
+open class APathfinder<PathfindingDelegateType: PathfindingDelegate> {
 
     typealias T = PathfindingDelegateType.StateType
     
-    public let initialState:T
-    public let finalState:T
-    private let finalStateNode:PathfindingNode<T>
-    private var currentState:PathfindingNode<T>
-    public let delegate:PathfindingDelegateType
+    open let initialState:T
+    open let finalState:T
+    fileprivate let finalStateNode:PathfindingNode<T>
+    fileprivate var currentState:PathfindingNode<T>
+    open let delegate:PathfindingDelegateType
     
-    public private(set) var openList:[PathfindingNode<T>]   = []
-    public private(set) var closedList = Set<PathfindingNode<T>>()
+    open fileprivate(set) var openList:[PathfindingNode<T>]   = []
+    open fileprivate(set) var closedList = Set<PathfindingNode<T>>()
     
     public init(initial:T, final:T, delegate:PathfindingDelegateType) {
         self.initialState   = initial
@@ -34,7 +34,7 @@ public class APathfinder<PathfindingDelegateType: PathfindingDelegate> {
         self.delegate       = delegate
     }
     
-    public func findOptimalPath() throws -> [T] {
+    open func findOptimalPath() throws -> [T] {
         self.openList.append(PathfindingNode(state: self.initialState, hValue: delegate.distanceFrom(self.initialState, to: self.finalState)))
         while try !self.walkState() {
 
@@ -42,16 +42,16 @@ public class APathfinder<PathfindingDelegateType: PathfindingDelegate> {
         return self.currentState.getPath()
     }
     
-    public func findOptimalPathAsynchronously(queue:dispatch_queue_t, handler:([T]?) -> Void) {
-        dispatch_async(queue) {
+    open func findOptimalPathAsynchronously(_ queue:DispatchQueue, handler:@escaping ([T]?) -> Void) {
+        queue.async {
             let path = try? self.findOptimalPath()
             handler(path)
         }
     }
     
-    public func walkState() throws -> Bool {
+    open func walkState() throws -> Bool {
         guard let state = self.getLowestState() else {
-            throw APathfinderError.ImpossiblePath
+            throw APathfinderError.impossiblePath
         }
         
         self.moveFromOpenToClosed(state)
@@ -69,15 +69,15 @@ public class APathfinder<PathfindingDelegateType: PathfindingDelegate> {
         return false
     }
     
-    public func iterateAdjacentStates(adjacentStates:[(PathfindingNode<T>, Int)], state:PathfindingNode<T>) {
+    open func iterateAdjacentStates(_ adjacentStates:[(PathfindingNode<T>, Int)], state:PathfindingNode<T>) {
         for (adjacent, moveCost) in adjacentStates {
-            if let existingIndex = self.closedList.indexOf(adjacent) {
+            if let existingIndex = self.closedList.index(of: adjacent) {
                 let node = self.closedList[existingIndex]
                 if state.movementCost + moveCost < node.movementCost {
                     node.setParent(state, g: moveCost)
                 }
             } else {
-                if let existingIndex = self.openList.indexOf(adjacent) {
+                if let existingIndex = self.openList.index(of: adjacent) {
                     let node = self.openList[existingIndex]
                     if state.movementCost + moveCost < node.movementCost {
                         node.setParent(state, g: moveCost)
@@ -90,7 +90,7 @@ public class APathfinder<PathfindingDelegateType: PathfindingDelegate> {
         }
     }
     
-    public func getLowestState() -> PathfindingNode<T>? {
+    open func getLowestState() -> PathfindingNode<T>? {
         
         guard var lowState = self.openList.first else {
             return nil
@@ -114,9 +114,9 @@ public class APathfinder<PathfindingDelegateType: PathfindingDelegate> {
         return lowState
     }
     
-    public func moveFromOpenToClosed(state:PathfindingNode<T>) -> Bool {
-        if let index = self.openList.indexOf(state) {
-            self.closedList.insert(self.openList.removeAtIndex(index))
+    open func moveFromOpenToClosed(_ state:PathfindingNode<T>) -> Bool {
+        if let index = self.openList.index(of: state) {
+            self.closedList.insert(self.openList.remove(at: index))
             return true
         }
         /*

@@ -13,9 +13,11 @@ import Cocoa
 #endif
 import CoronaConvenience
 import CoronaStructures
+import GameKit
+
 public protocol CellularAutomatonDelegate {
     
-    func neighboringPointsForPoint(point:IntPoint) -> [IntPoint]
+    func neighboringPointsForPoint(_ point:IntPoint) -> [IntPoint]
     
     var validToInvalidInitialFactor:CGFloat { get }
     
@@ -30,45 +32,45 @@ public protocol CellularAutomatonDelegate {
  and false is considered invalid. It is up to users to decide
  what those mean in the context of their program.
 */
-public class CellularAutomaton: NSObject {
+open class CellularAutomaton: NSObject {
 
     // MARK: - Types
     
-    public struct CellIsland: SequenceType {
+    public struct CellIsland: Sequence {
         
-        public typealias Generator    = Set<IntPoint>.Generator
+        public typealias Iterator = Set<IntPoint>.Iterator
         
         public let isValid:Bool
         public let points:Set<IntPoint>
         public let edges:Set<IntPoint>
         public let count:Int
         
-        private init(isValid:Bool, points:Set<IntPoint>, edges:Set<IntPoint>) {
+        fileprivate init(isValid:Bool, points:Set<IntPoint>, edges:Set<IntPoint>) {
             self.isValid    = isValid
             self.points     = points
             self.edges      = edges
             self.count      = points.count
         }
         
-        public func contains(point:IntPoint) -> Bool {
+        public func contains(_ point:IntPoint) -> Bool {
             return self.points.contains(point)
         }
         
-        public func generate() -> Generator {
-            return self.points.generate()
+        public func makeIterator() -> Iterator {
+            return self.points.makeIterator()
         }
         
     }
     
     // MARK: - Properties
     
-    public let delegate:CellularAutomatonDelegate
-    public let width:Int
-    public let height:Int
-    public private(set) var tiles:BoolList2D
+    open let delegate:CellularAutomatonDelegate
+    open let width:Int
+    open let height:Int
+    open fileprivate(set) var tiles:BoolList2D
     
-    private var islands:[CellIsland] = []
-    private var islandsAreDirty = true
+    fileprivate var islands:[CellIsland] = []
+    fileprivate var islandsAreDirty = true
     
     // MARK: - Setup
     
@@ -89,16 +91,16 @@ public class CellularAutomaton: NSObject {
         
         super.init()
         
-        srandom(seed)
+        let random = GKMersenneTwisterRandomSource(seed: UInt64(seed))
         for j in 0..<height {
             for i in 0..<width {
-                let factor = CGFloat(random()) / CGFloat(0x7fffffff)
+                let factor = CGFloat(random.nextUniform())
                 self[(i, j)] = factor >= self.delegate.validToInvalidInitialFactor
             }
         }
     }
     
-    public init?(url:NSURL, delegate:CellularAutomatonDelegate = NeumannCellularAutomatonDelegate()) {
+    public init?(url:URL, delegate:CellularAutomatonDelegate = NeumannCellularAutomatonDelegate()) {
         guard let tiles = BoolList2D(contentsOfURL: url) else {
             //Can't return nil until properties are populated with dummy values.
             self.width = 0
@@ -118,7 +120,7 @@ public class CellularAutomaton: NSObject {
     }
     
     public convenience init?(file:String, delegate:CellularAutomatonDelegate) {
-        let url = NSURL.URLForPath(file, pathExtension: "plist")
+        let url = URL.URLForPath(file, pathExtension: "plist")
         self.init(url: url, delegate: delegate)
     }
     
@@ -137,7 +139,7 @@ public class CellularAutomaton: NSObject {
     // MARK: - Accessors
     
     ///Accessor for the validity value of the tile at (x, y)
-    public subscript(x:Int, y:Int) -> Bool {
+    open subscript(x:Int, y:Int) -> Bool {
         get {
             if self.pointLiesInGrid(IntPoint(x: x, y: y)) {
                 return self.tiles[(x, y)]
@@ -155,11 +157,11 @@ public class CellularAutomaton: NSObject {
     
     // MARK: - Logic
     
-    public func pointLiesInGrid(point:IntPoint) -> Bool {
+    open func pointLiesInGrid(_ point:IntPoint) -> Bool {
         return 0 <= point.x && point.x < self.width && 0 <= point.y && point.y < self.height
     }
     
-    private func validNeighboringPointsFor(point:IntPoint) -> [IntPoint] {
+    fileprivate func validNeighboringPointsFor(_ point:IntPoint) -> [IntPoint] {
         var neighbors = self.delegate.neighboringPointsForPoint(point)
         neighbors = neighbors.filter() {
             return $0.withinGridWidth(self.width, height: self.height)
@@ -167,7 +169,7 @@ public class CellularAutomaton: NSObject {
         return neighbors
     }
     
-    private func neighborCountOfPoint(point:IntPoint) -> Int {
+    fileprivate func neighborCountOfPoint(_ point:IntPoint) -> Int {
         //Invalid neighbors (think of a wall in a dungeon) are the neighbors we are counting.
 //        return self.validNeighboringPointsFor(point).reduce(0) { $0 + (self[$1.x, $1.y] ? 0 : 1) }
         let points = [
@@ -184,7 +186,7 @@ public class CellularAutomaton: NSObject {
     }
     
     ///Updates all tiles based on delegate's rules for
-    public func iterate() {
+    open func iterate() {
         
         var updateTiles = self.tiles
         for j in 0..<self.tiles.height {
@@ -206,7 +208,7 @@ public class CellularAutomaton: NSObject {
      number of iterations corresponds to a mostly open grid and an odd number of iterations
      corresponds to a mostly closed grid.
      */
-    public func iterate(times:Int) {
+    open func iterate(_ times:Int) {
         for _ in 0..<times {
             self.iterate()
         }
@@ -216,7 +218,7 @@ public class CellularAutomaton: NSObject {
     /**
      Gets the island containing the given point.
     */
-    public func getIslandAt(point:IntPoint) -> CellIsland {
+    open func getIslandAt(_ point:IntPoint) -> CellIsland {
         
         var reachedTiles    = Set<IntPoint>()
         var edges           = Set<IntPoint>()
@@ -238,7 +240,7 @@ public class CellularAutomaton: NSObject {
                 }
             }
             
-            queuedTiles.removeAtIndex(0)
+            queuedTiles.remove(at: 0)
         }
         
         return CellIsland(isValid: validity, points: reachedTiles, edges: edges)
@@ -247,7 +249,7 @@ public class CellularAutomaton: NSObject {
     /**
      Returns all islands (valid & invalid) in this object.
     */
-    public func findAllIslands() -> [CellIsland] {
+    open func findAllIslands() -> [CellIsland] {
         
         guard self.islandsAreDirty else {
             return self.islands
@@ -286,7 +288,7 @@ public class CellularAutomaton: NSObject {
                 }
                 
                 let island = self.getIslandAt(point)
-                reachedTiles.unionInPlace(island.points)
+                reachedTiles.formUnion(island.points)
                 islands.append(island)
                 tileCount += island.points.count
                 
@@ -306,7 +308,7 @@ public class CellularAutomaton: NSObject {
      
      - paramter island: The island to flip.
     */
-    public func flipIsland(island:CellIsland) {
+    open func flipIsland(_ island:CellIsland) {
         for point in island {
             self[point.x, point.y].flip()
         }
@@ -317,45 +319,45 @@ public class CellularAutomaton: NSObject {
      
      - parameter validity: The validity of the islands you wish to remove.
     */
-    public func removeSmallestIslands(validity:Bool) {
+    open func removeSmallestIslands(_ validity:Bool) {
         var islands = self.findAllIslands().filter() { $0.isValid == validity }
         guard islands.count > 0 else {
             return
         }
         var maxIndex = 0
         var maxCount = 0
-        for (i, island) in islands.enumerate() {
+        for (i, island) in islands.enumerated() {
             if island.points.count > maxCount {
                 maxCount = island.points.count
                 maxIndex = i
             }
         }
-        islands.removeAtIndex(maxIndex)
+        islands.remove(at: maxIndex)
         
         for island in islands {
             self.flipIsland(island)
         }
     }
     
-    private func findIslandsWithoutBiggestIsland() -> [CellIsland] {
+    fileprivate func findIslandsWithoutBiggestIsland() -> [CellIsland] {
         var islands = self.findAllIslands().filter() { $0.isValid }
         guard islands.count > 0 else {
             return []
         }
         var maxIndex = 0
         var maxCount = 0
-        for (i, island) in islands.enumerate() {
+        for (i, island) in islands.enumerated() {
             if island.count > maxCount {
                 maxIndex = i
                 maxCount = island.count
             }
         }
-        islands.removeAtIndex(maxIndex)
+        islands.remove(at: maxIndex)
         return islands
     }
     
     ///Connects each island to another island (except for the biggest one).
-    public func connectValidIslands() {
+    open func connectValidIslands() {
         let islands = self.findIslandsWithoutBiggestIsland()
 //        let islands = self.findAllIslands()
         for island in islands {
@@ -371,13 +373,13 @@ public class CellularAutomaton: NSObject {
     }
     
     ///Connects the smallest valid islands to each other until there is only 1 valid island left.
-    public func connectAllValidIslands() {
+    open func connectAllValidIslands() {
         while (self.findAllIslands().reduce(0) { $0 + ($1.isValid ? 1 : 0) } > 1) {
             self.connectValidIslands()
         }
     }
     
-    public func pathToNearestIslandFrom(island:CellIsland) -> [IntPoint] {
+    open func pathToNearestIslandFrom(_ island:CellIsland) -> [IntPoint] {
         
         var visitedPoints = Set<PathfindingNode<IntPoint>>()
         
@@ -415,7 +417,7 @@ public class CellularAutomaton: NSObject {
         return []
     }
     
-    public func pathFrom(point:IntPoint, to:IntPoint) -> [IntPoint] {
+    open func pathFrom(_ point:IntPoint, to:IntPoint) -> [IntPoint] {
         
         let initialState    = point
         let finalState      = to
@@ -425,11 +427,11 @@ public class CellularAutomaton: NSObject {
     }
     
     ///Write the tiles to a file that can be read with init(file:delegate:).
-    public func writeToFile(file:String) -> Bool {
+    open func writeToFile(_ file:String) -> Bool {
         return self.tiles.writeToFile(file)
     }
     
-    public func getDictionary() -> NSMutableDictionary {
+    open func getDictionary() -> NSMutableDictionary {
         return self.tiles.getDictionary()
     }
     
@@ -437,7 +439,7 @@ public class CellularAutomaton: NSObject {
 
 extension CellularAutomaton: PathfindingDelegate {
 
-    public func statesAdjacentTo(state: IntPoint) -> [(IntPoint, Int)] {
+    public func statesAdjacentTo(_ state: IntPoint) -> [(IntPoint, Int)] {
         /*
          *  I don't remember why this is commented out,
          *  it was probably too slow.
@@ -485,7 +487,7 @@ extension CellularAutomaton: PathfindingDelegate {
         return states
     }
     
-    public func costToMoveFrom(fromState: IntPoint, to toState: IntPoint) -> Int {
+    public func costToMoveFrom(_ fromState: IntPoint, to toState: IntPoint) -> Int {
         if fromState.x != toState.x && fromState.y != toState.y {
             return 14
         } else {
@@ -493,7 +495,7 @@ extension CellularAutomaton: PathfindingDelegate {
         }
     }
     
-    public func distanceFrom(fromState: IntPoint, to toState: IntPoint) -> Int {
+    public func distanceFrom(_ fromState: IntPoint, to toState: IntPoint) -> Int {
         let xDiff = CGFloat(fromState.x - toState.x)
         let yDiff = CGFloat(fromState.y - toState.y)
         return Int(10.0 * sqrt(xDiff * xDiff + yDiff * yDiff))

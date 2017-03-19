@@ -32,17 +32,18 @@ public struct MooreCellularAutomatonDelegate: CellularAutomatonDelegate {
         self.invalidToValidConversion = invalid
     }
     
-    public func neighboringPointsForPoint(point: IntPoint) -> [IntPoint] {
+    public func neighboringPointsForPoint(_ point: IntPoint) -> [IntPoint] {
         let points:[IntPoint] = [
-            point + IntPoint(x: +1, y: +0),
-            point + IntPoint(x: -1, y: +0),
-            point + IntPoint(x: +0, y: +1),
-            point + IntPoint(x: +0, y: -1),
-            point + IntPoint(x: +1, y: +1),
-            point + IntPoint(x: +1, y: -1),
-            point + IntPoint(x: -1, y: +1),
+            point + IntPoint(x:  1, y:  0),
+            point + IntPoint(x: -1, y:  0),
+            point + IntPoint(x:  0, y:  1),
+            point + IntPoint(x:  0, y: -1),
+            point + IntPoint(x:  1, y:  1),
+            point + IntPoint(x:  1, y: -1),
+            point + IntPoint(x: -1, y:  1),
             point + IntPoint(x: -1, y: -1)
         ]
+        
         return points
     }
     
@@ -63,12 +64,12 @@ public struct NeumannCellularAutomatonDelegate: CellularAutomatonDelegate {
         self.invalidToValidConversion = invalid
     }
     
-    public func neighboringPointsForPoint(point: IntPoint) -> [IntPoint] {
+    public func neighboringPointsForPoint(_ point: IntPoint) -> [IntPoint] {
         let points:[IntPoint] = [
-            point + IntPoint(x: +1, y: +0),
-            point + IntPoint(x: -1, y: +0),
-            point + IntPoint(x: +0, y: +1),
-            point + IntPoint(x: +0, y: -1)
+            point + IntPoint(x:  1, y:  0),
+            point + IntPoint(x: -1, y:  0),
+            point + IntPoint(x:  0, y:  1),
+            point + IntPoint(x:  0, y: -1)
         ]
         return points
     }
