@@ -1,0 +1,51 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "77D3D805A12C6D6211A81DF1E4B334822AB4547A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "BE4D2D50881A2E62C3A41DC9B288DEE482092ED3" : 0,
+    "4A90A722C0D5BCE93BAF9E2494386311BDFB5DB8" : 9223372036854775807,
+    "77D3D805A12C6D6211A81DF1E4B334822AB4547A" : 0,
+    "34F7D422FB3054CFBD6E34FD29953606CFFC95C8" : 9223372036854775807,
+    "AB6D654632EA0247DF9384A35319AE413E860B02" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "40DC0E36-62EB-4BBA-990C-200D41C40B86",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "BE4D2D50881A2E62C3A41DC9B288DEE482092ED3" : "Gravity\/",
+    "4A90A722C0D5BCE93BAF9E2494386311BDFB5DB8" : "CoronaStructures\/",
+    "77D3D805A12C6D6211A81DF1E4B334822AB4547A" : "CoronaPathfinding\/",
+    "34F7D422FB3054CFBD6E34FD29953606CFFC95C8" : "CoronaConvenience\/",
+    "AB6D654632EA0247DF9384A35319AE413E860B02" : "OmniSwift\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CoronaPathfinding",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CoronaPathfinding.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/CooperCorona\/CoronaConvenience.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "34F7D422FB3054CFBD6E34FD29953606CFFC95C8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/CooperCorona\/CoronaStructures.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4A90A722C0D5BCE93BAF9E2494386311BDFB5DB8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/CooperCorona\/Corona-Pathfinding.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "77D3D805A12C6D6211A81DF1E4B334822AB4547A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/CooperCorona\/OmniSwift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AB6D654632EA0247DF9384A35319AE413E860B02"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/CooperCorona\/Gravity.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BE4D2D50881A2E62C3A41DC9B288DEE482092ED3"
+    }
+  ]
+}
