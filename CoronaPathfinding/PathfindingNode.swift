@@ -13,7 +13,7 @@
 #endif
 import CoronaConvenience
 
-public final class PathfindingNode<T: Hashable/*: PathfindingProtocol*/>: /*NSObject, PathfindingProtocol,*/Hashable, Comparable, CustomStringConvertible {
+public final class PathfindingNode<T: Hashable>: Hashable, Comparable, CustomStringConvertible {
     
     public fileprivate(set) var parent:PathfindingNode<T>? = nil
     public fileprivate(set) var movementCost = 0
@@ -28,31 +28,6 @@ public final class PathfindingNode<T: Hashable/*: PathfindingProtocol*/>: /*NSOb
         self.state  = state
         self.hValue = hValue
     }
-    /*
-    public func adjacentStates() -> [PathfindingNode<T>] {
-        return self.state.adjacentStates().map() { PathfindingNode(state: $0) }
-    }
-    
-    public func gValue() -> Int {
-//        return self.state.gValue()
-        return self.movementCost
-    }
-    
-    public func hValue(finalState:PathfindingNode<T>) -> Int {
-        return self.state.hValue(finalState.state)
-    }
-    
-    public func hValue(finalState:T) -> Int {
-        return self.state.hValue(finalState)
-    }
-
-    public func fValue(finalState:PathfindingNode<T>) -> Int {
-        return self.hValue(finalState) + self.gValue()
-    }
-    
-    public func fValue(finalState:T) -> Int {
-        return self.state.fValue(finalState)
-    }*/
     
     public func setParent(_ parent: PathfindingNode<T>, g: Int) {
         self.parent = parent

@@ -15,7 +15,7 @@ enum APathfinderError: Error {
 
 open class APathfinder<PathfindingDelegateType: PathfindingDelegate> {
 
-    typealias T = PathfindingDelegateType.StateType
+    public typealias T = PathfindingDelegateType.StateType
     
     open let initialState:T
     open let finalState:T
@@ -119,15 +119,6 @@ open class APathfinder<PathfindingDelegateType: PathfindingDelegate> {
             self.closedList.insert(self.openList.remove(at: index))
             return true
         }
-        /*
-        for i in 0..<self.openList.count {
-            if state == self.openList[i] {
-                let removed = self.openList.removeAtIndex(i)
-                self.closedList.insert(removed)
-                return true
-            }
-        }
-        */
         return false
     }
     
