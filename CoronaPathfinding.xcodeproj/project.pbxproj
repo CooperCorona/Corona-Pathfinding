@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC2845F61F44BA41003C3FF0 /* APathfinder_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2845F51F44BA41003C3FF0 /* APathfinder_Tests.swift */; };
 		DC3FBB3D1DDB9A9800E05CEA /* CoronaConvenience.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC3FBB351DDB9A8F00E05CEA /* CoronaConvenience.framework */; };
 		DC3FBB3E1DDB9A9800E05CEA /* CoronaStructures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC3FBB3C1DDB9A9200E05CEA /* CoronaStructures.framework */; };
 		DC6183551C0E8C6D00327685 /* APathfinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6183531C0E8C6D00327685 /* APathfinder.swift */; };
@@ -17,6 +18,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DC2845EE1F44BA2C003C3FF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC3FBB301DDB9A8F00E05CEA /* CoronaConvenience.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC6B68CA1EB59E7700B0FF92;
+			remoteInfo = CoronaConvenience.Tests;
+		};
+		DC2845F21F44BA2C003C3FF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC3FBB361DDB9A9200E05CEA /* CoronaStructures.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC66C0D51F43C9AB0097AB9C;
+			remoteInfo = "CoronaStructures-Tests";
+		};
 		DC3FBB341DDB9A8F00E05CEA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC3FBB301DDB9A8F00E05CEA /* CoronaConvenience.xcodeproj */;
@@ -34,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC2845E51F44BA2C003C3FF0 /* CoronaPathfinding-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CoronaPathfinding-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC2845E91F44BA2C003C3FF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC2845F51F44BA41003C3FF0 /* APathfinder_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APathfinder_Tests.swift; sourceTree = "<group>"; };
 		DC3FBB301DDB9A8F00E05CEA /* CoronaConvenience.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoronaConvenience.xcodeproj; path = ../CoronaConvenience/CoronaConvenience.xcodeproj; sourceTree = "<group>"; };
 		DC3FBB361DDB9A9200E05CEA /* CoronaStructures.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoronaStructures.xcodeproj; path = ../CoronaStructures/CoronaStructures.xcodeproj; sourceTree = "<group>"; };
 		DC6183481C0E8C5000327685 /* CoronaPathfinding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoronaPathfinding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +64,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DC2845E21F44BA2C003C3FF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC6183441C0E8C5000327685 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -58,10 +83,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC2845E61F44BA2C003C3FF0 /* CoronaPathfinding-Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DC2845F51F44BA41003C3FF0 /* APathfinder_Tests.swift */,
+				DC2845E91F44BA2C003C3FF0 /* Info.plist */,
+			);
+			path = "CoronaPathfinding-Tests";
+			sourceTree = "<group>";
+		};
 		DC3FBB311DDB9A8F00E05CEA /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				DC3FBB351DDB9A8F00E05CEA /* CoronaConvenience.framework */,
+				DC2845EF1F44BA2C003C3FF0 /* CoronaConvenience.Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				DC3FBB3C1DDB9A9200E05CEA /* CoronaStructures.framework */,
+				DC2845F31F44BA2C003C3FF0 /* CoronaStructures-Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,6 +116,7 @@
 				DC3FBB301DDB9A8F00E05CEA /* CoronaConvenience.xcodeproj */,
 				DC3FBB361DDB9A9200E05CEA /* CoronaStructures.xcodeproj */,
 				DC61834A1C0E8C5000327685 /* CoronaPathfinding */,
+				DC2845E61F44BA2C003C3FF0 /* CoronaPathfinding-Tests */,
 				DC6183491C0E8C5000327685 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				DC6183481C0E8C5000327685 /* CoronaPathfinding.framework */,
+				DC2845E51F44BA2C003C3FF0 /* CoronaPathfinding-Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +156,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		DC2845E41F44BA2C003C3FF0 /* CoronaPathfinding-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC2845F41F44BA2C003C3FF0 /* Build configuration list for PBXNativeTarget "CoronaPathfinding-Tests" */;
+			buildPhases = (
+				DC2845E11F44BA2C003C3FF0 /* Sources */,
+				DC2845E21F44BA2C003C3FF0 /* Frameworks */,
+				DC2845E31F44BA2C003C3FF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CoronaPathfinding-Tests";
+			productName = "CoronaPathfinding-Tests";
+			productReference = DC2845E51F44BA2C003C3FF0 /* CoronaPathfinding-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DC6183471C0E8C5000327685 /* CoronaPathfinding */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC6183501C0E8C5000327685 /* Build configuration list for PBXNativeTarget "CoronaPathfinding" */;
@@ -142,9 +197,15 @@
 		DC61833F1C0E8C5000327685 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Cooper Knaak";
 				TargetAttributes = {
+					DC2845E41F44BA2C003C3FF0 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = ULGC99Z6NQ;
+						ProvisioningStyle = Automatic;
+					};
 					DC6183471C0E8C5000327685 = {
 						CreatedOnToolsVersion = 7.1.1;
 						LastSwiftMigration = 0810;
@@ -174,11 +235,26 @@
 			projectRoot = "";
 			targets = (
 				DC6183471C0E8C5000327685 /* CoronaPathfinding */,
+				DC2845E41F44BA2C003C3FF0 /* CoronaPathfinding-Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		DC2845EF1F44BA2C003C3FF0 /* CoronaConvenience.Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CoronaConvenience.Tests.xctest;
+			remoteRef = DC2845EE1F44BA2C003C3FF0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DC2845F31F44BA2C003C3FF0 /* CoronaStructures-Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "CoronaStructures-Tests.xctest";
+			remoteRef = DC2845F21F44BA2C003C3FF0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		DC3FBB351DDB9A8F00E05CEA /* CoronaConvenience.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -196,6 +272,13 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DC2845E31F44BA2C003C3FF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC6183461C0E8C5000327685 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -206,6 +289,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DC2845E11F44BA2C003C3FF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC2845F61F44BA41003C3FF0 /* APathfinder_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC6183431C0E8C5000327685 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -221,6 +312,45 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		DC2845EA1F44BA2C003C3FF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ULGC99Z6NQ;
+				INFOPLIST_FILE = "CoronaPathfinding-Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "CooperCorona.CoronaPathfinding-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		DC2845EB1F44BA2C003C3FF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ULGC99Z6NQ;
+				INFOPLIST_FILE = "CoronaPathfinding-Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "CooperCorona.CoronaPathfinding-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		DC61834E1C0E8C5000327685 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -365,6 +495,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DC2845F41F44BA2C003C3FF0 /* Build configuration list for PBXNativeTarget "CoronaPathfinding-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC2845EA1F44BA2C003C3FF0 /* Debug */,
+				DC2845EB1F44BA2C003C3FF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DC6183421C0E8C5000327685 /* Build configuration list for PBXProject "CoronaPathfinding" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

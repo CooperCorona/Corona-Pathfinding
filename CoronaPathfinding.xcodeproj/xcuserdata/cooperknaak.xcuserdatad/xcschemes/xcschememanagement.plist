@@ -4,14 +4,24 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CoronaPathfinding-Tests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>CoronaPathfinding.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>DC2845E41F44BA2C003C3FF0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>DC6183471C0E8C5000327685</key>
 		<dict>
 			<key>primary</key>

@@ -21,8 +21,8 @@ public final class PathfindingNode<T: Hashable>: Hashable, Comparable, CustomStr
     public var fValue:Int { return self.hValue + self.movementCost }
     public let state:T
     
-    public /*override */var hashValue:Int { return self.state.hashValue }
-    public /*override */var description:String { return "\(self.state)" }
+    public var hashValue:Int { return self.state.hashValue }
+    public var description:String { return "\(self.state) (\(self.hValue) + \(self.movementCost) = \(self.fValue))" }
     
     public init(state:T, hValue:Int) {
         self.state  = state
