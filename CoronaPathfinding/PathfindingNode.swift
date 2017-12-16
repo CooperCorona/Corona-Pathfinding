@@ -40,22 +40,22 @@ public final class PathfindingNode<T: Hashable>: Hashable, Comparable, CustomStr
 
 }
 
-public func ==<T: Hashable/*PathfindingProtocol*/>(lhs:PathfindingNode<T>, rhs:PathfindingNode<T>) -> Bool {
+public func ==<T>(lhs:PathfindingNode<T>, rhs:PathfindingNode<T>) -> Bool {
     return lhs.state == rhs.state
 }
 
-public func < <T: Hashable>(lhs:PathfindingNode<T>, rhs:PathfindingNode<T>) -> Bool {
+public func < <T>(lhs:PathfindingNode<T>, rhs:PathfindingNode<T>) -> Bool {
     return lhs.fValue < rhs.fValue
 }
 
-public func > <T: Hashable>(lhs:PathfindingNode<T>, rhs:PathfindingNode<T>) -> Bool {
+public func > <T>(lhs:PathfindingNode<T>, rhs:PathfindingNode<T>) -> Bool {
     return lhs.fValue > rhs.fValue
 }
 
-public func <= <T: Hashable>(lhs:PathfindingNode<T>, rhs:PathfindingNode<T>) -> Bool {
+public func <= <T>(lhs:PathfindingNode<T>, rhs:PathfindingNode<T>) -> Bool {
     return lhs.fValue <= rhs.fValue
 }
 
-public func >= <T: Hashable>(lhs:PathfindingNode<T>, rhs:PathfindingNode<T>) -> Bool {
+public func >= <T>(lhs:PathfindingNode<T>, rhs:PathfindingNode<T>) -> Bool {
     return lhs.fValue >= rhs.fValue
 }

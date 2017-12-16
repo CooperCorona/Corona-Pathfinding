@@ -95,7 +95,7 @@ open class CellularAutomaton: NSObject {
         for j in 0..<height {
             for i in 0..<width {
                 let factor = CGFloat(random.nextUniform())
-                self[(i, j)] = factor >= self.delegate.validToInvalidInitialFactor
+                self[i, j] = factor >= self.delegate.validToInvalidInitialFactor
             }
         }
     }
@@ -142,14 +142,14 @@ open class CellularAutomaton: NSObject {
     open subscript(x:Int, y:Int) -> Bool {
         get {
             if self.pointLiesInGrid(IntPoint(x: x, y: y)) {
-                return self.tiles[(x, y)]
+                return self.tiles[x, y]
             } else {
                 return false
             }
         }
         set {
             if self.pointLiesInGrid(IntPoint(x: x, y: y)) {
-                self.tiles[(x, y)] = newValue
+                self.tiles[x, y] = newValue
                 self.islandsAreDirty = true
             }
         }
@@ -192,9 +192,9 @@ open class CellularAutomaton: NSObject {
         for j in 0..<self.tiles.height {
             for i in 0..<self.tiles.width {
                 let count = self.neighborCountOfPoint(IntPoint(x: i, y: j))
-                if self[(i, j)] && count < self.delegate.validToInvalidConversion {
+                if self[i, j] && count < self.delegate.validToInvalidConversion {
                     updateTiles[i, j] = false
-                } else if !self[(i, j)] && count > self.delegate.invalidToValidConversion {
+                } else if !self[i, j] && count > self.delegate.invalidToValidConversion {
                     updateTiles[i, j] = true
                 }
             }

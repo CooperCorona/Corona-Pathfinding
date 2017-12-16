@@ -114,7 +114,7 @@ open class APathfinder<PathfindingDelegateType: PathfindingDelegate> {
         return lowState
     }
     
-    open func moveFromOpenToClosed(_ state:PathfindingNode<T>) -> Bool {
+    @discardableResult open func moveFromOpenToClosed(_ state:PathfindingNode<T>) -> Bool {
         if let index = self.openList.index(of: state) {
             self.closedList.insert(self.openList.remove(at: index))
             return true
